@@ -21,7 +21,7 @@ public class JsonFileUtil {
             path ="src/com/ramen/order/util/orders.json";
             try{
                 reader =  new BufferedReader(new FileReader(path));  
-                writer = new BufferedWriter(new FileWriter(path));  
+                writer = new BufferedWriter(new FileWriter(path,true));  
             }catch (final Exception e) {  
                 e.printStackTrace();  
             }
@@ -54,7 +54,7 @@ public class JsonFileUtil {
  
     public void writeToJson(final String data){  
         try {  
-            writer.write(data);  
+            writer.write(data+"\n");  
         } catch (final IOException e) {  
             e.printStackTrace();  
         }finally {  
