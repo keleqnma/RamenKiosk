@@ -4,9 +4,8 @@ import com.ramen.order.Constants;
 import com.ramen.order.util.DishUtil;
 import com.ramen.order.util.IDUtil;
 import com.ramen.order.util.SuitUtil;
-
-import org.javatuples.Quartet;
 import lombok.Data;
+import org.javatuples.Quartet;
 
 import java.util.*;
 
@@ -56,13 +55,15 @@ public class Order{
         Quartet<Long,String,Map<Long,String>,Map<Long,Boolean>> suitOption = Quartet.with(id,option,fixedOption,optionaloption);
         suitOptions.add(suitOption);
     }
+
+
     public Order(Long memberId){
         setMemberId(memberId);
-        setDishOptions(new HashMap<Long,String>());
+        setDishOptions(new HashMap<>());
         setId(IDUtil.createID());
         setIssueTime(new Date());
-        setSuitIds(new ArrayList<Long>());
-        setSuitOptions(new ArrayList<Quartet<Long, String, Map<Long, String>, Map<Long, Boolean>>>());
+        setSuitIds(new ArrayList<>());
+        setSuitOptions(new ArrayList<>());
     }
 
     public Order(Long id,Long memberId,double price,Date issueTime,Constants.DiningOption diningOption,List<Long> suitIds,Map<Long,String> dishOptions,List<Quartet<Long,String,Map<Long,String>,Map<Long,Boolean>>> suitOptions){
@@ -72,8 +73,8 @@ public class Order{
         setIssueTime(issueTime);
         setMemberId(memberId);
         setSuitIds(suitIds);
-        setDishOptions(dishOptions);
         setSuitOptions(suitOptions);
+        setDiningOption(diningOption);
     }
 
 }

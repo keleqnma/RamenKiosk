@@ -40,6 +40,7 @@ public class Suit{
     public Suit(Long id,String name,Double price,String[] options,Long[] fixDishIds,Long[] optionDishIds){
         setId(id);
         setName(name);
+        setPrice(price);
         setOptions(options);
         setFixDishIds(fixDishIds);
         setOptionDishIds(optionDishIds);
